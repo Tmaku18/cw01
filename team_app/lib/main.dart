@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                 Icon(
                   Icons.favorite,
                   color: Colors.pink,
-                  size: 24.0,
+                  size: 30.0,
                   semanticLabel: 'Text to announce in accessibility modes',
                 ),
                 Icon(
@@ -50,7 +50,22 @@ class HomePage extends StatelessWidget {
                 Icon(
                   Icons.beach_access,
                   color: Colors.blue,
-                  size: 36.0,
+                  size: 30.0,
+                ),
+                Icon(
+                  Icons.calculate,
+                  color: Colors.black,
+                  size: 30.0,
+                ),
+                Icon(
+                  Icons.health_and_safety,
+                  color: Colors.red,
+                  size: 30.0,
+                ),
+                Icon(
+                  Icons.alarm,
+                  color: Colors.orange,
+                  size: 30.0,
                 ),
               ],
             ),
