@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  //modified to a stateful widget as it is needed for the bottom navigation bar
   const HomePage({super.key});
 
   @override
@@ -29,8 +30,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // made to handle the tab bar index
   int _currentIndex = 0;
 
+  //the indexes of the pages, TextTab is a placeholder widget
   final List<Widget> _pages = const [
     IconsTab(),
     TextTab(title: "1"),
@@ -39,6 +42,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   @override
+  //this build is for items that remain constant across tabs
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -46,7 +50,10 @@ class _HomePageState extends State<HomePage> {
         title: Text('Flutter is Fun!'),
       ),
 
+      //body changes based on the selected tab
       body: _pages[_currentIndex],
+
+      //bottom navigation bar to switch between tabs
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -74,51 +81,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      /*
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Icon(
-                  Icons.favorite,
-                  color: Colors.pink,
-                  size: 30.0,
-                  semanticLabel: 'Text to announce in accessibility modes',
-                ),
-                Icon(
-                  Icons.audiotrack,
-                  color: Colors.green,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.beach_access,
-                  color: Colors.blue,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.calculate,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.health_and_safety,
-                  color: Colors.red,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.alarm,
-                  color: Colors.orange,
-                  size: 30.0,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-      */
     );
   }
 }
