@@ -25,6 +25,7 @@ class HomePage extends StatefulWidget {
   //modified to a stateful widget as it is needed for the bottom navigation bar
   const HomePage({super.key});
 
+  //since the home page is stateful, we need to create its state
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -56,11 +57,13 @@ class _HomePageState extends State<HomePage> {
       //bottom navigation bar to switch between tabs
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+        //handling tab selection through touch/click
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
+        //the visual set up of the bottom navigation bar
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
@@ -85,7 +88,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
+//the 'Icons' tab widget, called when the first tab is selected
 class IconsTab extends StatelessWidget {
   const IconsTab({super.key});
 
@@ -132,6 +135,8 @@ class IconsTab extends StatelessWidget {
   }
 }
 
+//generic widget to display text for tabs 1, 2, and 3
+//a new class with unique name would be created for each tab in a real app
 class TextTab extends StatelessWidget {
   final String title;
 
