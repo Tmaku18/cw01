@@ -12,10 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // TASK 1: Change the title of the app
       title: 'My Amazing App',
       theme: ThemeData(
-        // TASK 2: Change the primary swatch color (try Colors.red, Colors.green)
         primarySwatch: Colors.red,
       ),
       home: HomePage(),
@@ -23,8 +21,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -126,7 +125,7 @@ class _HomePageState extends State<HomePage> {
 
 
 class IconsTab extends StatelessWidget {
-  const IconsTabe({super.key});
+  const IconsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
