@@ -123,3 +123,66 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+class IconsTab extends StatelessWidget {
+  const IconsTabe({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: const <Widget>[
+          Icon(
+            Icons.favorite,
+            color: Colors.pink,
+            size: 30.0,
+            semanticLabel: 'Text to announce in accessibility modes',
+          ),
+          Icon(
+            Icons.audiotrack,
+            color: Colors.green,
+            size: 30.0,
+          ),
+          Icon(
+            Icons.beach_access,
+            color: Colors.blue,
+            size: 30.0,
+          ),
+          Icon(
+            Icons.calculate,
+            color: Colors.black,
+            size: 30.0,
+          ),
+          Icon(
+            Icons.health_and_safety,
+            color: Colors.red,
+            size: 30.0,
+          ),
+          Icon(
+            Icons.alarm,
+            color: Colors.orange,
+            size: 30.0,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TextTab extends StatelessWidget {
+  final String title;
+
+  const TextTab({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 24),
+      ),
+    );
+  }
+}
