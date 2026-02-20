@@ -11,9 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // TASK 1: Change the title of the app
+      // This title is mainly used by the OS/task switcher (it’s not the AppBar text).
       title: 'My Amazing App',
       theme: ThemeData(
         // TASK 2: Change the primary swatch color (try Colors.red, Colors.green)
+        // This sets the default color theme used by widgets like the AppBar.
         primarySwatch: Colors.red,
       ),
       home: HomePage(),
@@ -27,42 +29,44 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // TASK 3: Change the text in the top bar
+        // This is the title the user actually sees at the top of the screen.
         title: Text('Flutter is Fun!'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // TASK 4: Change the main text below
-            Text(
-              'Welcome to my app!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        // The main content is centered so it looks good on different screen sizes.
+        child: Card(
+          elevation: 4,
+          margin: EdgeInsets.all(16),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Icon(Icons.person, size: 50, color: Colors.blue),
+                SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      // Replace this with your real name for the assignment.
+                      'Student Name',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      // This is a short subtitle line under the name.
+                      'Major: Computer Science',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            SizedBox(height: 20), // Adds space between widgets
-            // TASK 5: Change the subtitle text
-            Text(
-              'Let\'s learn Flutter together',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                print('Button Clicked!');
-              },
-              // TASK 6: Change the text on the button
-              child: Text('Press Here!'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print('Created by Tanaka Makuvaza');
-              },
-              // TASK 6: Change the text on the button
-              child: Text('Press Me Too!'),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-            ),
-          ],
+          ),
         ),
       ),
+      // If you need more UI later (buttons, extra text, etc.), add it inside `body`.
     );
   }
 }
